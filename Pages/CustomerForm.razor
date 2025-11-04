@@ -1,0 +1,57 @@
+﻿@page "/customer-form"
+@using BlazorCustomerForm.Models
+
+<h3>Create Customer</h3>
+
+<EditForm Model="@customer" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <InputText id="email" class="form-control" @bind-Value="customer.Email" />
+        <ValidationMessage For="@(() => customer.Email)" />
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <InputText id="phone" class="form-control" @bind-Value="customer.PhoneNumber" />
+        <ValidationMessage For="@(() => customer.PhoneNumber)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p class="@statusClass">@message</p>
+}
+
+@code {
+    private Customer customer = new Customer();
+    private string message = string.Empty;
+    private string statusClass = string.Empty;
+
+    private void HandleValidSubmit()
+    {
+        // Process the valid form data here (e.g., send to a service or API)
+        statusClass = "alert-success";
+        message = "Customer data submitted successfully!";
+
+        // Example: You would usually save to a database here
+        Console.WriteLine($"Submitting customer: {customer.Name}, {customer.Email}");
+    }
+
+    private void HandleInvalidSubmit()
+    {
+        statusClass = "alert-danger";
+        message = "Form has validation errors.";
+    }
+}
+
