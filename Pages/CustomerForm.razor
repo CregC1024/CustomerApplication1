@@ -1,7 +1,7 @@
 ﻿@page "/customer-form"
 @using BlazorCustomerForm.Models
 
-<h3>Create Customer</h3>
+<h3>Patient Intake Form</h3>
 
 <EditForm Model="@customer" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
     <DataAnnotationsValidator />
@@ -9,6 +9,66 @@
 
     <div class="form-group">
         <label for="name">Name:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">Middle Name:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">Last Name:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">Sex:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">Social Security Number:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">Date of Birth:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">Primary Phone:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">Cell Phone:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">Email Address:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">Address:</label>
+        <InputText id="name" class="form-control" @bind-Value="customer.Name" />
+        <ValidationMessage For="@(() => customer.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="name">City:</label>
         <InputText id="name" class="form-control" @bind-Value="customer.Name" />
         <ValidationMessage For="@(() => customer.Name)" />
     </div>
